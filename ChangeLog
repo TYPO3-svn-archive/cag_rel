@@ -1,0 +1,51 @@
+01-04-10 Torsten Schrade <schradt@uni-mainz.de>
+
+	0.3.3	* bugfix: inclusion of plugin class needs to be handled differently in TYPO3 4.3
+
+23-05-07 Torsten Schrade  <t.schrade@connecta.ag>
+
+	0.3.2	* bugfix: automatic prev/next feature sometimes ended up with wrong values
+			* bugfix: hreflang attribute was cut when used in the additional params field (thx to Niels Froehling)
+			* 2 new TS properties (thx to Niels Froehling):
+				* LinkTagTitle: <string> overrides the title of a menuitem from TS
+				* LinkTagParams: <string> overrides the parameters for an item from TS
+			* the title of the <link> can now be overriden from the additional params field as well
+
+
+02-04-07 Torsten Schrade  <t.schrade@connecta.ag>
+
+	0.3.1	* In the context of HMENU.special = browse the.setRelation property can now consist of a property list seperated by '|'.
+			The values should correspond to the order of values set in .special.items.
+			* Included a new TS example for autogenerating chapter, section & subsection relationships. Thanks to Mike Lorrey for the idea.
+
+31-03-07 Torsten Schrade  <t.schrade@connecta.ag>
+
+	0.3.0	* new feature: href attribute can now be entered into the additional params field and will override any given value
+			* new TS property .recLevel: sets the depth in pagetree for the function that gets the relational pages should look
+			* new feature: next/prev relations can now be set automatically by using a HMENU.special = browse
+			* 2 new TS properties for the HMENUS that generate the link blocks:
+				* setRelation = <string> (overrides any relation from the fields in pagerecords)
+				* defRelation = <string> (sets a default relation if only the flag for link elements is checked; useful for prev/next also)
+			* security improvements for additional params field
+
+14-04-06 Torsten Schrade  <t.schrade@connecta.ag>
+
+	0.2.0	* Included rekursive page feature for <links> (by adding a '+' to ids in params field)
+			* Revised documentation
+
+09-04-06 Torsten Schrade  <t.schrade@connecta.ag>
+
+	0.1.0	* First public release
+
+08-04-06 Torsten Schrade  <t.schrade@connecta.ag>
+
+	0.1.0	* posibility to limit links to certain pages by inserting ids into the params field
+			* possibility to add HMTL comments in the params field which get wrapped around the links
+
+04-04-06 Torsten Schrade  <t.schrade@connecta.ag>
+
+	0.0.5	* made ready to use in real environments
+
+04-04-06 Torsten Schrade  <t.schrade@connecta.ag>
+
+	0.0.1	* Initial draft
