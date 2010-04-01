@@ -1,0 +1,40 @@
+temp.spacer = HTML
+temp.spacer.value (
+
+
+)
+
+temp.rel.links = COA
+temp.rel.links {
+
+	5 < temp.spacer
+
+	# general relations
+	10 = HMENU
+	10 {
+
+		special = list
+
+		special.value.cObject = USER
+		special.value.cObject {
+				userFunc = tx_cagrel_pi1->select_pages
+				recLevel = 10
+				getRel = 0,1,2,3,4,5,6,7,8,9,10,11,12,13,15
+		}
+
+		1 = TMENU
+		1 {
+			IProcFunc = tx_cagrel_pi1->make_relLink
+			NO.allWrap = |
+			NO.defRelation = section
+		}
+	}
+	11 < temp.spacer
+
+	# stylesheets
+
+	100 < .10
+	100.special.value.cObject.getRel = 14
+}
+
+page.headerData.1999 < temp.rel.links
