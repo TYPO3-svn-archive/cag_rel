@@ -1,3 +1,8 @@
+22-07-12 Torsten Schrade <schradt@uni-mainz.de>
+	1.0.0	* new TS Feature: stdWrap for LinkTagParams
+			* some cleanups
+			* stable state
+
 01-04-10 Torsten Schrade <schradt@uni-mainz.de>
 
 	0.3.3	* bugfix: inclusion of plugin class needs to be handled differently in TYPO3 4.3

@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007-2010 Torsten Schrade (schradt@uni-mainz.de)
+*  (c) 2007-2012 Torsten Schrade (schradt@uni-mainz.de)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -54,7 +54,7 @@ class tx_cagrel_pi1 extends tslib_pibase {
 	 *
 	 * @return	string		A comma separated list of IDs from which the TMENUS are built
 	 */
-	function select_pages ($content,$conf) {
+	function select_pages ($content, $conf) {
 
 			if ($conf['getRel']) {
 
@@ -92,13 +92,13 @@ class tx_cagrel_pi1 extends tslib_pibase {
 	 *
 	 * @return	array		The modified I['parts'] array
 	 */
-	function make_relLink ($I,$conf) {
+	function make_relLink ($I, $conf) {
 
 		$pageID = intval($GLOBALS['TSFE']->page['uid']); 	/* the current page id */
 		$uidList = array(); 								/* list of IDs that might be specified for the item */
 		$key = $I['key'];									/* the current key of the current menu item */
 
-		// we don't want a normal <a> tag from the TMENU this time ;)
+			// we don't want a normal <a> tag from the TMENU this time ;)
 		unset($I['parts']['ATag_begin']);
 		unset($I['parts']['ATag_end']);
 
@@ -154,15 +154,16 @@ class tx_cagrel_pi1 extends tslib_pibase {
 		}
 
 			// check for additional parameters
-		if ($conf['parentObj']->menuArr[$key]['tx_cagrel_params'] || $I['val']['LinkTagParams'])  {
+		if ($conf['parentObj']->menuArr[$key]['tx_cagrel_params'] || $I['val']['LinkTagParams'] || is_array($I['val']['LinkTagParams.'])) {
 
-			// if params are set from TS, use them (thanks to Niels!)
-			if ($I['val']['LinkTagParams']) {
+				// if params are set from TS, use them (thanks to Niels!)
+			if (is_array($I['val']['LinkTagParams.'])) {
+				$params = t3lib_div::trimExplode(';', $GLOBALS['TSFE']->cObj->stdWrap($I['val']['LinkTagParams'], $I['val']['LinkTagParams.']));
+			} elseif ($I['val']['LinkTagParams']) {
 				$params = t3lib_div::trimExplode(';', $I['val']['LinkTagParams']);
 			} else {
 				$params = t3lib_div::trimExplode(';', $conf['parentObj']->menuArr[$key]['tx_cagrel_params']);
 			}
-
 				// process the parameters
 			foreach ($params as $key => $value) {
 
@@ -237,14 +238,13 @@ class tx_cagrel_pi1 extends tslib_pibase {
 			}
 				// build a string of the remaining attributes which will be inserted
 			if (count($params) != 0) {
-
 				$addParams = str_replace('&quot;','"',htmlspecialchars(implode(' ', $params)));
 				$addParams .= ' ';
 			}
 
 		}
 
-		// check if a HMENU.special.browse is used and set relations accordingly
+			// check if a HMENU.special.browse is used and set relations accordingly
 		if($conf['parentObj']->conf['special'] == 'browse') {
 
 				// get the relation values from TS for override
@@ -302,15 +302,12 @@ class tx_cagrel_pi1 extends tslib_pibase {
 			if ($conf['parentObj']->menuArr[$key]['tx_cagrel_stdrel'] == 14) {
 				unset($title);
 			}
-
 				// compile the <link>
 			if ($comment['0']) {$I['parts']['before'] = "\t".$comment['0']."\n";} else {$I['parts']['before']='';}
 			$I['parts']['before'] .= "\t".'<link rel="'.$linkRel.'" '.$addParams.'href="'.htmlspecialchars($I['linkHREF']['HREF']).'"'.$title.' />'."\n";
 			if ($comment['1']) {$I['parts']['after'] = "\t".$comment['1']."\n";} else {$I['parts']['after']='';}
-
 		} else {
-			// take out the whole item if we're not on a corresponding page
-			// remember: ATag_begin + ATag_end have been unset already ;)
+				// take out the whole item if we're not on a corresponding page - remember: ATag_begin + ATag_end have been unset already ;)
 			unset($I['parts']['title']);
 		}
 		return $I;

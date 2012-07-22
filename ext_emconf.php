@@ -21,7 +21,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'priority' => '',
 	'loadOrder' => '',
 	'module' => '',
-	'state' => 'beta',
+	'state' => 'stable',
 	'uploadfolder' => 0,
 	'createDirs' => '',
 	'modify_tables' => 'pages',
@@ -29,11 +29,13 @@ $EM_CONF[$_EXTKEY] = array(
 	'lockType' => '',
 	'author' => 'Torsten Schrade',
 	'author_email' => 'schradt@uni-mainz.de',
-	'author_company' => 'Akademie der Wissenschaften und der Literatur, Mainz',
+	'author_company' => 'Akademie der Wissenschaften und der Literatur | Mainz',
 	'CGLcompliance' => '',
 	'CGLcompliance_note' => '',
 	'constraints' => array(
 		'depends' => array(
+			'php' => '5.3.0-0.0.0',
+			'typo3' => '4.5.0-0.0.0',
 		),
 		'conflicts' => array(
 		),

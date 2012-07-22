@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'cag_rel'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="pages.tx_cagrel_link">Add page to relational links</label>
+			<label index="pages.tx_cagrel_stdrel.I.0"></label>
+			<label index="pages.tx_cagrel_stdrel.I.1">alternate</label>
+			<label index="pages.tx_cagrel_stdrel.I.2">appendix</label>
+			<label index="pages.tx_cagrel_stdrel.I.3">bookmark</label>
+			<label index="pages.tx_cagrel_stdrel.I.4">chapter</label>
+			<label index="pages.tx_cagrel_stdrel.I.5">contents</label>
+			<label index="pages.tx_cagrel_stdrel.I.6">copyright</label>
+			<label index="pages.tx_cagrel_stdrel.I.7">glossary</label>
+			<label index="pages.tx_cagrel_stdrel.I.8">help</label>
+			<label index="pages.tx_cagrel_stdrel.I.9">index</label>
+			<label index="pages.tx_cagrel_stdrel.I.10">next</label>
+			<label index="pages.tx_cagrel_stdrel.I.11">prev</label>
+			<label index="pages.tx_cagrel_stdrel.I.12">section</label>
+			<label index="pages.tx_cagrel_stdrel.I.13">start</label>
+			<label index="pages.tx_cagrel_stdrel.I.14">stylesheet</label>
+			<label index="pages.tx_cagrel_stdrel.I.15">subsection</label>
+			<label index="pages.tx_cagrel_stdrel">Standard link relation</label>
+			<label index="pages.tx_cagrel_specrel">Special link relation</label>
+			<label index="pages.tx_cagrel_params">Additional link parameters (;)</label>
+		</languageKey>
+
+		<languageKey index="de" type="array">
+			<label index="pages.tx_cagrel_link">Seite zu Linkrelationen hinzufügen</label>
+			<label index="pages.tx_cagrel_stdrel.I.0"></label>
+			<label index="pages.tx_cagrel_stdrel.I.1">alternate</label>
+			<label index="pages.tx_cagrel_stdrel.I.2">appendix</label>
+			<label index="pages.tx_cagrel_stdrel.I.3">bookmark</label>
+			<label index="pages.tx_cagrel_stdrel.I.4">chapter</label>
+			<label index="pages.tx_cagrel_stdrel.I.5">contents</label>
+			<label index="pages.tx_cagrel_stdrel.I.6">copyright</label>
+			<label index="pages.tx_cagrel_stdrel.I.7">glossary</label>
+			<label index="pages.tx_cagrel_stdrel.I.8">help</label>
+			<label index="pages.tx_cagrel_stdrel.I.9">index</label>
+			<label index="pages.tx_cagrel_stdrel.I.10">next</label>
+			<label index="pages.tx_cagrel_stdrel.I.11">prev</label>
+			<label index="pages.tx_cagrel_stdrel.I.12">section</label>
+			<label index="pages.tx_cagrel_stdrel.I.13">start</label>
+			<label index="pages.tx_cagrel_stdrel.I.14">stylesheet</label>
+			<label index="pages.tx_cagrel_stdrel.I.15">subsection</label>
+			<label index="pages.tx_cagrel_stdrel">Linkrelation</label>
+			<label index="pages.tx_cagrel_specrel">Benutzerdefinierte Linkrelation</label>
+			<label index="pages.tx_cagrel_params">Weitere Parameter der Linkrelation (;)</label>
+		</languageKey>
+	</data>
+</T3locallang>

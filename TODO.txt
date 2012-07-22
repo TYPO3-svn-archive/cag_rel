@@ -1,1 +1,2 @@
-*	waiting for feedback
+* Adapt manual to new template / ReST
+* release of 1.0.0
